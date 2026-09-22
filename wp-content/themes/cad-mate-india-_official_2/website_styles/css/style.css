@@ -14487,3 +14487,26 @@ blockquote {
   -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
           box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
+
+/* === Mobile-first stability pass — 2026-09-22 === */
+html { overflow-x: hidden; }
+body { overflow-x: clip; -webkit-text-size-adjust: 100%; }
+img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
+@media (max-width: 991.98px) {
+  .container, .container-fluid { padding-left: 16px !important; padding-right: 16px !important; }
+  .header-area, .site-header, .main-header { max-width: 100%; }
+  .navbar-brand img, .logo img, .site-logo img { max-width: min(180px, 54vw); height: auto; }
+  .navbar-toggler, .menu-toggle, .mobile-menu-toggle { min-width: 44px; min-height: 44px; }
+  .main-menu, .main-navigation, .navbar-collapse { max-width: 100%; }
+  .main-menu a, .main-navigation a, .navbar-collapse a { white-space: normal; overflow-wrap: anywhere; }
+  .row > [class*="col-"] { min-width: 0; }
+  table { display: block; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 767.98px) {
+  body { font-size: 16px; }
+  input, select, textarea, button { font-size: 16px !important; max-width: 100%; }
+  h1, .hero-title, .banner-title, .page-title { font-size: clamp(2rem, 9vw, 2.8rem) !important; line-height: 1.08 !important; overflow-wrap: anywhere; }
+  h2, h3 { overflow-wrap: anywhere; }
+  .btn, button, input[type="submit"], a[class*="btn"] { min-height: 44px; }
+  section { max-width: 100%; }
+}
